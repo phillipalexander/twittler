@@ -1,6 +1,10 @@
 // Sweet animated logo
 jQuery(document).ready(function ($) {
 	$('.logo').addClass('animated fadeInUp');
+	var robotAngrify = function(){
+		console.log('robot=ANGRY');
+	};
+	$('.logo').mouseenter(robotAngrify);
 });
 
 // Original Twittler goodness
