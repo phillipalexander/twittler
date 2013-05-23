@@ -1,11 +1,41 @@
-// Sweet animated logo
-jQuery(document).ready(function ($) {
+// // Sweet animated logo
+// jQuery(document).ready(function ($) {
+// 	$('.logo').addClass('animated fadeInUp');
+// 	var robotAngrify = function () {
+// 		console.log('robot=ANGRY');
+// 	};
+// 	$('.logo').mouseenter(robotAngrify);
+// });
+
+$(document).ready(function () {
 	$('.logo').addClass('animated fadeInUp');
-	var robotAngrify = function(){
-		console.log('robot=ANGRY');
-	};
-	$('.logo').mouseenter(robotAngrify);
+	$('.logo').hover(function () {
+		$('.logo').removeClass('animated fadeInUp');
+		$('.logo').addClass('animated bounce');
+	}, function () {
+		$('.logo').removeClass('animated bounce');
+	});
 });
+
+/*===================================
+=            animate.css            =
+===================================*/
+
+// $(document).ready(function () {
+// 	$('.checks :checkbox').attr('checked', true);
+// 	$('.checks label').hover(function () {
+// 		var anim = $(this).html();
+// 		$(this).addClass(anim);
+// 	}, function () {
+// 		$(this).removeClass();
+// 	});
+// });
+
+/*-----  End of animate.css  ------*/
+
+/*==================================================
+=            original twittler goodness            =
+==================================================*/
 
 // Original Twittler goodness
 // $(document).ready(function () {
@@ -21,9 +51,13 @@ jQuery(document).ready(function ($) {
 // 		$tweet.appendTo($body);
 // 		index -= 1;
 // 	}
-
 // });
 
+/*-----  End of original twittler goodness  ------*/
+
+/*=====================================
+=            JQuery table?            =
+=====================================*/
 
 // Trying to build a table with JQuery
 //
@@ -56,3 +90,5 @@ jQuery(document).ready(function ($) {
 // 	// add table to dom
 // 	$table.appendTo('body');
 // });
+
+/*-----  End of JQuery table?  ------*/
