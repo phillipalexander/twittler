@@ -62,7 +62,11 @@ $(document).ready(function () {
 		var tweet = {};
 		tweet.user = randomElement(users);
 		tweet.message = randomMessage();
-		tweet.created_at = new Date();
+		tweet.created_at = {
+			'literal': new Date(),
+			'humane': moment(this.literal).fromNow()
+		};
+
 		addTweet(tweet);
 	};
 
@@ -94,7 +98,7 @@ $(document).ready(function () {
 	while (index >= 0) {
 		var tweet = streams.home[index];
 		var $tweet = $('<div></div>');
-		$tweet.text('@' + tweet.user + ': ' + tweet.message);
+		$tweet.text('@' + tweet.user + ': ' + tweet.message + "[" + tweet.created_at.humane + "]");
 		$tweet.appendTo($body);
 		index -= 1;
 	}
