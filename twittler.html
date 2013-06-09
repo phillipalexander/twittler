@@ -1,23 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+
 <head>
-	<meta charset="utf-8">
 	<title>Twittler</title>
-	<link href="css/twittler.css" rel="stylesheet"></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<style type="text/css">
+
+
+
+	/* Main marketing message and sign up button */
+	.jumbotron {
+		margin: 60px 0;
+		text-align: center;
+	}
+	.jumbotron h1 {
+		font-size: 96px;
+		line-height: 1;
+	}
+	</style>
+</head>
 <body>
-
-	<div class="top-headline">
-		<h1 class="top-logo">
-			<div class="logo"></div>
-			Twittler
-			<small>[all your tweets are belong to us]</small>
-		</h1>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="brand" href="#">Phillip Alexander</a>
+				<div class="navbar-content">
+					<ul class="nav"></ul>
+				</div>
+			</div>
+		</div>
 	</div>
-	<!-- /top-headline -->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<!-- ============= SIDEBAR  ============= -->
+			<div class="span3">
+				<div class="well well-small">
+					<ul class="nav  nav-pills nav-stacked">
+						<li class="nav-header">Users:</li>
+						<li class="pickUser" id="">
+							<a href="#everyone"> <strong>@everyone</strong>
+							</a>
+						</li>
 
-	<!-- Load JS here for greater good =============================-->
-	<script src="js/jquery.js"></script>
-	<script src="js/moment.js"></script>
-	<script src="js/twittler.js"></script>
-</body>
-</html>
+						<li class="pickUser" id="shawndrost">
+							<a href="#">@shawndrost</a>
+						</li>
+						<li class="pickUser" id="sharksforcheap">
+							<a href="#">@sharksforcheap</a>
+						</li>
+						<li class="pickUser" id="mracus">
+							<a href="#">@mracus</a>
+						</li>
+						<li class="pickUser" id="douglascalhoun">
+							<a href="#">@douglascalhoun</a>
+						</li>
+					</ul>
+				</div>
+				<!-- ============= TIP BOX ============= -->
+				<div class="well well-small">
+					<p class="muted"> <b>Tip:</b>
+						&nbsp;Click on the users listed above to see their individual streams.
+					</p>
+				</div>
+			</div>
+			<!-- ============= MAIN ============= -->
+			<div class="span8">
+
+				<!-- ==========  JUMBOTRON ========== -->
+				<div class="jumbotron">
+					<h1>Twittler</h1>
+					<p class="lead"></p>
+				</div>
+
+				<!-- ============= UDPATE BUTTON ============= -->
+				<button type="button" class="btn btn-primary pull-left" id="refresh" data-loading-text="Loading...">Load Moar</button>
+
+				<!-- ============= TWEET BUTTON ============= -->
+				<a class="btn pull-right" role="button" data-toggle="modal" href="#join">Join the Conversation</a>
+				<!-- ============= Modal ============= -->
+				<div id="join" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="myModalLabel">Say anything</h3>
+					</div>
+					<div class="modal-body">
+						<!-- ============= FORM ============= -->
+						<form class="form-horizontal">
+							<!-- ============= username ============= -->
+							<div class="control-group">
+								<label class="control-label" for="username">username</label>
+								<div class="controls">
+									<input type="text" id="inputUsername" placeholder="username"></div>
+								</div>
+								<!-- ============= message ============= -->
+								<div class="control-group">
+									<label class="control-label" for="message">message</label>
+									<div class="controls">
+										<input type="text" id="inputMessage" placeholder="message" rows="3"></div>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button class="btn" data-dismiss="modal" aria-hidden="true" id="cancelTweet">Cancel</button>
+								<button class="btn btn-primary" id="publishTweet">Publish</button>
+							</div>
+						</div>
+						<!-- ============= TABLE (STREAMS) ============= -->
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th class="muted">Stream:</th>
+								</tr>
+							</thead>
+							<tbody id="tweetStream">
+							</tbody>
+						</table>
+						<!-- ============= END TABLE (STREAMS) ============= -->
+					</div>
+					<!-- ============= END MAIN ============= -->
+				</div>
+			</div>
+			<script src="js/jquery.js"></script>
+			<script src="js/bootstrap.js"></script>
+			<script src="js/moment.js"></script>
+			<script src="js/twittler.js"></script>
+		</body>
+
+		</html>
